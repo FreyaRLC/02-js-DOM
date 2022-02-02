@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-indhold</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100%;
+      }
+      section {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+      }
+
+      article {
+        outline: 1px solid;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        outline: 1px solid;
+      }
+
+      h2 {
+        grid-column: 2/3;
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        outline: 1px solid;
+      }
+
+      article:nth-child(1) {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="Et random billede" />
+          <h3>Article 1</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+            aspernatur nesciunt nostrum, impedit voluptatem laudantium tempora
+            minus minima consectetur, reprehenderit distinctio recusandae nisi
+            totam sit quos deserunt qui. In, aut! Obcaecati quae corrupti vel,
+            optio vitae corporis ipsum minima, eligendi omnis ullam nihil
+            accusamus aliquid quasi cum, iure reprehenderit officiis.
+          </p>
+        </article>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="Et random billede" />
+          <h3>Article 2</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+            aspernatur nesciunt nostrum, impedit voluptatem laudantium tempora
+            minus minima consectetur, reprehenderit distinctio recusandae nisi
+            totam sit quos deserunt qui. In, aut! Obcaecati quae corrupti vel,
+            optio vitae corporis ipsum minima, eligendi omnis ullam nihil
+            accusamus aliquid quasi cum, iure reprehenderit officiis.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>This is the footer</footer>
+    <script>
+      const overskriftH1 = document.querySelector("h1");
+      const overskriftH2 = document.querySelector("h2");
+      const artikel1Titel = document.querySelector("article:nth-child(1) h3");
+      const artikel2Titel = document.querySelector("article:nth-child(2) h3");
+      const brødtekst1 = document.querySelector("article:nth-child(1) p");
+      const brødtekst2 = document.querySelector("article:nth-child(2) p");
+      const artikel1Pic = document.querySelector("article:nth-child(1) img");
+      const artikel2Pic = document.querySelector("article:nth-child(2) img");
+
+      let mainSection = document.querySelector("section");
+      let artikel3 = document.createElement("article");
+      let artikel3Titel = document.createElement("h3");
+      let artikel3TitelText = document.createTextNode("Article 3");
+      let brødtekst3 = document.createElement("p");
+      let brødtekst3Text = document.createTextNode("Brødtekst til artikel 3");
+      let artikel3Pic = document.createElement("img");
+      artikel3Pic.src = "https://placeimg.com/640/480/any";
+
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        console.log("Dom er loaded!");
+        mainSection.appendChild(artikel3);
+        artikel3.appendChild(artikel3Pic);
+        artikel3Titel.appendChild(artikel3TitelText);
+        artikel3.appendChild(artikel3Titel);
+        artikel3.appendChild(brødtekst3);
+        brødtekst3.appendChild(brødtekst3Text);
+
+        artikel1Pic.src = "https://placeimg.com/640/480/any/grayscale";
+        artikel2Pic.src = "https://placeimg.com/640/480/any/grayscale";
+        artikel2Pic.alt = "et grayscale billede";
+      }
+    </script>
+  </body>
+</html>

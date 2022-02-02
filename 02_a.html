@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-select</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 100%;
+      }
+      section {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+      }
+
+      article {
+        outline: 1px solid;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        outline: 1px solid;
+      }
+
+      h2 {
+        grid-column: 2/3;
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        outline: 1px solid;
+      }
+
+      article:nth-child(1) {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="Et random billede" />
+          <h3>Article 1</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+            aspernatur nesciunt nostrum, impedit voluptatem laudantium tempora
+            minus minima consectetur, reprehenderit distinctio recusandae nisi
+            totam sit quos deserunt qui. In, aut! Obcaecati quae corrupti vel,
+            optio vitae corporis ipsum minima, eligendi omnis ullam nihil
+            accusamus aliquid quasi cum, iure reprehenderit officiis.
+          </p>
+        </article>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="Et random billede" />
+          <h3>Article 2</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
+            aspernatur nesciunt nostrum, impedit voluptatem laudantium tempora
+            minus minima consectetur, reprehenderit distinctio recusandae nisi
+            totam sit quos deserunt qui. In, aut! Obcaecati quae corrupti vel,
+            optio vitae corporis ipsum minima, eligendi omnis ullam nihil
+            accusamus aliquid quasi cum, iure reprehenderit officiis.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>This is the footer</footer>
+    <script>
+      const overskriftH1 = document.querySelector("h1");
+      const overskriftH2 = document.querySelector("h2");
+      const brødtekst1 = document.querySelector("article:nth-child(1) p");
+      const brødtekst2 = document.querySelector("article:nth-child(2) p");
+      console.log(brødtekst1);
+    </script>
+  </body>
+</html>
